@@ -7,7 +7,7 @@ const Connection = () => {
 
     const MONGODB_URI = process.env.MONGODB_URI;
 
-    mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+    mongoose.connect(MONGODB_URI);
 
     mongoose.connection.on('connected', () => {
         console.log('Database connected Successfully');
@@ -18,7 +18,7 @@ const Connection = () => {
     })
 
     mongoose.connection.on('error', () => {
-        console.log('Error while connecting with the database ', error.message);
+        console.log('Error while connecting with the database ');
     })
 }
 

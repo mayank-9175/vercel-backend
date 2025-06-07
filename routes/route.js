@@ -5,7 +5,9 @@ import { addTodo, getAllTodos, toggleTodoDone, updateTodo, deleteTodo } from '..
 
 const route = express.Router();
 
-
+route.get("/",(req,res)=>{
+    res.send("Welcome")
+})
 route.post('/todos', addTodo)
 route.get('/todos', getAllTodos);
 route.get('/todos/:id', toggleTodoDone);
